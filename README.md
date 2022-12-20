@@ -1,6 +1,15 @@
-# Vue 3 + Vite
+# ACHUSTORE - ECOMMERCE WEB APPLICATION USING FAKESTORE API
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+To access this project , 
+1. clone or download the repo.https://github.com/Achufam24/Assesment.git 
+2. Open this project in any text editor of your choice preferably visual studio code.
+3. Open your terminal and navigate to project directory.
+4. Run 'npm install' to install required dependencies.
+5. To preview this project in your browser, run 'npm run dev'
+6. To build this project for deployment, run 'npm run build'
+
+#Live Link: https://achustore.netlify.app/
+
 
 ## Recommended IDE Setup
 
