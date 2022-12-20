@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import createPersistedState from 'vuex-persistedstate'
 
 
 
@@ -67,6 +68,7 @@ const store = createStore({
             return state.cart.length
         }
     },
+    plugins: [createPersistedState()]
 
 })
 
