@@ -3,9 +3,9 @@
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 px-2 sm:px-4 py-2.5" v-if="products.length > 1">
     <div v-for="product in products" :key="product.id" class="flex flex-col cart  bg-white rounded-lg shadow-md hover:bg-slate-50">
     <div>
-        <a href="#">
-        <img class="p-8 rounded-t-lg" :src="`${product.image}`" alt="product image" />
-    </a>
+        <router-link v-bind:to="'/product/' + product.id">
+        <img class="p-8 mx-auto rounded-t-lg" :src="`${product.image}`" alt="product image" />
+    </router-link>
     </div>
     <div class="py-8 px-5">
         <router-link   v-bind:to="'/product/' + product.id">
@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import { ref, onMounted, computed } from "vue";
 import { useStore } from "vuex";
 import { mapActions, mapMutations, mapGetters } from 'vuex'
 const store = useStore();
@@ -33,6 +32,7 @@ import Loader from "../components/Loader.vue";
 
 
 export default {
+    components: { Loader },
     methods: {
         ...mapMutations({
             add: "increment",
@@ -53,10 +53,6 @@ export default {
             cart: "getCart"
         }),
     },
-    setup() {
-        return {};
-    },
-    components: { Loader }
 }
 </script>
 

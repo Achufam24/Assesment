@@ -9,7 +9,7 @@
         <span class="text-1xl font-extrabold">Description: </span>{{product.description}}</p>
         <p>Category: <i class="text-slate-500">{{product.category}}</i></p>
         <h1 class="text-3xl font-extrabold">${{(product.price * 1.022).toFixed(2)}}</h1>
-        <button class="py-2 px-6 mt-7 w-56 rounded-xl text-white bg-blue-500">Add to Cart</button>
+        <button @click="addProduct(id)" class="py-2 px-6 mt-7 w-56 rounded-xl text-white bg-blue-500">Add to Cart</button>
         </div>
     </div>
     </div>
@@ -23,14 +23,21 @@
 import axios from 'axios'
 import { ref } from 'vue';
 import {useRouter, useRoute} from "vue-router";
-import Loader from './Loader.vue'
+import { useStore } from "vuex"
+
+import Loader from '../components/Loader.vue'
 
 export default {
     components:{
         Loader
     },
+    methods:{
+        addProduct(){
+            this.$store.dispatch('addItem', ...arguments);
+        },
+    },
     mounted() {
-         this.increment();
+       this.getProduct();
     },
     setup(){
         const router = useRouter();
@@ -38,17 +45,16 @@ export default {
         const id = route.params.id;
         const product = ref();
 
-    async function increment() {
-    await axios.get('products/' + id).then(response => (this.product = response.data))
-    
+    async function getProduct() {
+      await axios.get('products/' + id).then(response => (this.product = response.data))
     }
 
     return {
         router, 
         route, 
         id, 
-        increment, 
-        product
+        getProduct,
+        product,
     }
     }
 }

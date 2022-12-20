@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import SingleProduct from '../components/singleProduct.vue'
+import SingleProduct from '../views/singleProduct.vue'
 import Home from '../views/Products.vue'
 import Cart from '../views/Cart.vue'
 

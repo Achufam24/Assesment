@@ -1,6 +1,6 @@
 <template>
     <router-link to="/cart" class="button text-white bg-blue-500 py-1 px-2 rounded-md">
-    Cart
+     Cart
     ({{count}})
   </router-link>
 </template>

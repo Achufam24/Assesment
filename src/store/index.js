@@ -48,7 +48,7 @@ const store = createStore({
                 alert('Prouct added to cart successfully!')
             }
           },
-          removeItem(context, item) {
+        removeItem(context, item) {
             context.commit('removeItem',item)
             alert('Product removed from cart!')
         }      

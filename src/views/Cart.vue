@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div v-if="carts.length > 0" class="container mx-auto" v-for="cart in carts" :key="cart._id">
     <div class="flex items-center justify-between p-4 bg-white shadow-md rounded-md">
       <div class="flex items-center">
@@ -47,7 +46,6 @@ const carts = computed(() => {
  async function removeFromCart() {
     return store.dispatch('removeItem', ...arguments);
 }
-
 </script>
 
 <style scoped>
